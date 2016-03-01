@@ -39,30 +39,30 @@
     <repo>https://github.com/praves77/cordova-plugin-android-idfa.git</repo>
     <issue>https://github.com/praves77/cordova-plugin-android-idfa/issues</issue>
 
-    <dependency id="com.google.play.services" />
+    <framework src="com.google.android.gms:play-services-ads:+" />
 
     <js-module src="www/androidIDFA.js" name="androidIDFA">
         <!--<clobbers target="androidIDFA" />-->
         <merges target="androidIDFA" />
     </js-module>
 
-<!-- android-specific elements -->
-<platform name="android">
+    <!-- android-specific elements -->
+    <platform name="android">
 
-    <source-file src="src/android/AndroidIDFA.java" target-dir="src/com/praves/cordova/idfa" />
-    <source-file src="src/android/CoreException.java" target-dir="src/com/praves/cordova/idfa" />
-    <source-file src="src/android/AdvertisingIdClient.java" target-dir="src/com/praves/cordova/idfa" />
+        <source-file src="src/android/AndroidIDFA.java" target-dir="src/com/praves/cordova/idfa" />
+        <source-file src="src/android/CoreException.java" target-dir="src/com/praves/cordova/idfa" />
+        <source-file src="src/android/AdvertisingIdClient.java" target-dir="src/com/praves/cordova/idfa" />
 
-    <config-file target="res/xml/config.xml" parent="/*">
-        <feature name="AndroidIDFA">
-            <param name="android-package" value="com.praves.cordova.android.idfa.AndroidIDFA" />
-        </feature>
-    </config-file>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidIDFA">
+                <param name="android-package" value="com.praves.cordova.android.idfa.AndroidIDFA" />
+            </feature>
+        </config-file>
 
-</platform> 
+    </platform>
 
-<!-- ios-specific elements -->
-<platform name="ios">
-</platform>
+    <!-- ios-specific elements -->
+    <platform name="ios">
+    </platform>
 
 </plugin>
